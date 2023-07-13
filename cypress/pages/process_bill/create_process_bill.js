@@ -16,6 +16,38 @@ class ProcessBill {
         return cy.get('body');
     }
 
+    getVendorRequiredMessage() {
+        return cy.xpath("//div[normalize-space()='Vendor is required']");
+    }
+
+    getBillNumberRequiredMessage() {
+        return cy.xpath("//div[normalize-space()='Bill Number is required']");
+    }
+
+    getBillDateRequiredMessage() {
+        return cy.xpath("//div[normalize-space()='Bill Date is required']");
+    }
+
+    getBillAmountRequiredMessage() {
+        return cy.xpath("//div[normalize-space()='Bill Amount is required']");
+    }
+
+    getBillTermRequiredMessage() {
+        return cy.xpath("//div[normalize-space()='Term is required']");
+    }
+
+    getSaveAsApprovedButton() {
+        return cy.contains('button','Save As Approved');
+    }
+
+    getSaveAsDraftButton() {
+        return cy.contains('button', 'Save As Draft');
+    }
+
+    getSubmitForApprovalButton() {
+        return cy.contains('button', 'Submit For Approval');
+    }
+
     // Vendor selection
 
     getVendorDropdownTriger() {
@@ -93,11 +125,11 @@ class ProcessBill {
     }
 
     getTaxableCheckboxAccount1() {
-        return cy.get('#taxableExpense_1 > .p-checkbox > .p-checkbox-box');
+        return cy.get('#taxableExpense_0 > .p-checkbox > .p-checkbox-box');
     }
 
     getAmountAccount1() {
-        return cy.get('#amount_1');
+        return cy.get('#amount_0');
     }
 
 
@@ -116,7 +148,7 @@ class ProcessBill {
     }
 
     getDropdownListItem1() {
-        return cy.get('#pr_id_174_list');
+        return cy.get('#pr_id_124_list');
     }
 
     getFirstItem1() {
@@ -129,6 +161,18 @@ class ProcessBill {
 
     getCostItem1() {
         return cy.get('#rate_1');
+    }
+
+    getItemQty1() {
+        return cy.get('#qty_0');
+    }
+
+    getItemCost1() {
+        return cy.get('#rate_0');
+    }
+
+    getItemAmount1() {
+        return cy.get('#itemAmount_0');
     }
 
 }

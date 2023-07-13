@@ -54,7 +54,7 @@ describe('po_table_actions', () => {
         clickPoSubmenu(purchaseOrders);
     })
 
-    it('01. create_&_approve_with_item_line1_&_account_line1', () => {
+    it.only('01. create_&_approve_with_item_line1_&_account_line1', () => {
 
         clickCreatePoButton();
         typePoNumber(poNumber0);

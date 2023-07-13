@@ -62,17 +62,17 @@ export function billTermSelection(billTerm) {
 }
 
 export function checkDueDate() {
-    processBillPage.getBillDueDate({timeout:5000}).should('have.value', '');
+    processBillPage.getBillDueDate({timeout:5000}).should('not.have.value', '');
 }
 
 export function accountSelectionLine1(account1) {
     processBillPage.getAccountDropdownTrigger1().click();
-    processBillPage.getAccountDropdownFilter1().type(account, {force:true});
+    processBillPage.getAccountDropdownFilter1().type(account1, {force:true});
     processBillPage.getAccountDropdownList1()
-    invoke('text')
+    .invoke('text')
     .then((text) => {
 
-        if(text.includes(text)) {
+        if(text.includes(account1)) {
             processBillPage.getFirstAccount1().click({force:true});
         } else {
             processBillPage.getAccountDropdownFilter1().clear({force:true});
@@ -85,15 +85,15 @@ export function accountSelectionLine1(account1) {
 }
 
 export function tickBillableAccount1() {
-    processBillPage.getBillableCheckboxaccount1().click();
+    processBillPage.getBillableCheckboxaccount1().click({force:true});
 }
 
 export function ticktaxableAccount1() {
-    processBillPage.getTaxableCheckboxAccount1().click();
+    processBillPage.getTaxableCheckboxAccount1().click({force:true});
 }
 
 export function typeAmountAccount1(amount1) {
-    processBillPage.getAmountAccount1().type(amount1);
+    processBillPage.getAmountAccount1().type(amount1, {force:true});
 }
 
 export function ItemSelectionLine1(item1) {
@@ -104,9 +104,10 @@ export function ItemSelectionLine1(item1) {
     .invoke('text')
     .then((text) => {
 
-        if(text.includes(text)) {
+        if(text.includes(item1)) {
             processBillPage.getFirstItem1().click({force:true});
         } else {
+            processBillPage.getDropdownFilterItem1().clear({force:true});
             processBillPage.getDropdownListItem1()
             .find('li')
             .eq(1)
@@ -116,7 +117,7 @@ export function ItemSelectionLine1(item1) {
 }
 
 export function typeQtyItem1(qty1) {
-    processBillPage.getqtyItem1().type(qty1);
+    processBillPage.getqtyItem1().type(qty1, {force:true});
 }
 
 export function typeItemCost1(cost1) {
@@ -128,4 +129,57 @@ export function typeItemCost1(cost1) {
     });
 }
 
+export function assertItemLineAmount1() {
+    processBillPage.getItemQty1().then(($qty) => {
+        const qty = parseFloat($qty.val());
+
+            processBillPage.getItemCost1().then(($cost) => {
+                const cost = parseFloat($cost.val());
+
+                    processBillPage.getItemAmount1().then(($amount) => {
+                        const amount = parseFloat($amount.val());
+                    
+                            const calculatedValue = qty*cost;
+                            expect(calculatedValue).to.equal(amount);
+                    });
+            });
+    });
+}
+
+export function validateBillHeaderRequiredFields() {
+    processBillPage.getVendorRequiredMessage()
+    .should('contain', 'Vendor is required');
+
+    processBillPage.getBillDateRequiredMessage()
+    .should('contain', 'Bill Date is required'); 
+
+    processBillPage.getBillNumberRequiredMessage()
+    .should('contain', 'Bill Number is required');
+
+    processBillPage.getBillAmountRequiredMessage()
+    .should('contain', 'Bill Amount is required');
+
+    processBillPage.getBillTermRequiredMessage()
+    .should('contain', 'Term is required');   
+}
+
+export function validateBillHeaderRequiredFieldsForDraft() {
+    processBillPage.getVendorRequiredMessage()
+    .should('contain', 'Vendor is required');
+
+    processBillPage.getBillNumberRequiredMessage()
+    .should('contain', 'Bill Number is required');
+}
+
+export function clickSaveAsApprovedButton() {
+    processBillPage.getSaveAsApprovedButton().click();
+}
+
+export function clickSaveAsDraftButton() {
+    processBillPage.getSaveAsDraftButton().click();
+}
+
+export function clickSubmitForApprovalButton() {
+    processBillPage.getSubmitForApprovalButton().click();
+}
 

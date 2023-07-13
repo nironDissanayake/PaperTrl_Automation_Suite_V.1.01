@@ -110,21 +110,21 @@ import PurchaseOrders from "../../pages/purchase_order/Create_po";
         purchaseOrdersPage.getQuantityInputI1().then(($quantityInput) => {
             const quantity = parseFloat($quantityInput.val());
         
-            purchaseOrdersPage.getCostInputI1().then(($costInput) => {
-            const cost = parseFloat($costInput.val());
+                purchaseOrdersPage.getCostInputI1().then(($costInput) => {
+                const cost = parseFloat($costInput.val());
         
-            purchaseOrdersPage.getDiscountInputI1().then(($discountInput) => {
-                const discount = parseFloat($discountInput.val());
+                    purchaseOrdersPage.getDiscountInputI1().then(($discountInput) => {
+                    const discount = parseFloat($discountInput.val());
         
-                purchaseOrdersPage.getAmountInputI1().then(($amountInput) => {
-                const amount = parseFloat($amountInput.val());
+                        purchaseOrdersPage.getAmountInputI1().then(($amountInput) => {
+                        const amount = parseFloat($amountInput.val());
         
-                const calculatedValue = (quantity * cost) - discount;
-                expect(calculatedValue).to.equal(amount);
-                });
+                        const calculatedValue = (quantity * cost) - discount;
+                        expect(calculatedValue).to.equal(amount);
+              });
             });
-            });
-        });     
+         });
+      });     
     }
 
     export function accounSelection1(account) {
