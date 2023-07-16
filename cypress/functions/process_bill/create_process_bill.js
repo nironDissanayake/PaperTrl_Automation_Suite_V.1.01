@@ -121,12 +121,8 @@ export function typeQtyItem1(qty1) {
 }
 
 export function typeItemCost1(cost1) {
-    processBillPage.getCostItem1().then(($cost) => {
-        const cost = $cost.val();
-            if(cost==="0.00") {
-                processBillPage.getCostItem1().type(cost1);
-            }
-    });
+    processBillPage.getCostItem1().clear({force:true});
+    processBillPage.getCostItem1().type(cost1, {force:true})
 }
 
 export function assertItemLineAmount1() {
@@ -183,3 +179,52 @@ export function clickSubmitForApprovalButton() {
     processBillPage.getSubmitForApprovalButton().click();
 }
 
+export function getAlert207() {  
+    return processBillPage.getAlertMessage207();
+}
+
+export function getAlert200() {
+    return processBillPage.getAlerttMessage200();
+}
+
+export function clickApproversSelector() {
+    processBillPage.getApproversSelector().click();
+}
+
+export function approvalGroupSelection(approvalGroup1) {
+    processBillPage.getApprovalGroupDropdownTrigger1().click();
+    processBillPage.getApprovalGroupSearchFilter1().type(approvalGroup1, {force:true});
+    processBillPage.getApprovalGroupDropdownList1()
+    .invoke('text')
+    .then((text) => {
+
+        if(text.includes(approvalGroup1)) {
+            processBillPage.getFirstApprovalGroup1().click({force:true});
+        } else {
+            processBillPage.getApprovalGroupSearchFilter1().clear({force:true});
+            processBillPage.getApprovalGroupDropdownList1()
+            .find('li')
+            .eq(0)
+            .click({force:true});
+        }
+    });
+}
+
+export function approvalUserSelection1(approvalUser1) {
+    processBillPage.getApprovalUserDropdownTrigger1().click();
+    processBillPage.getApprovalUserSearchFilter1().type(approvalUser1, {force:true});
+    processBillPage.getApprovalUserDropdownList1()
+    .invoke('text')
+    .then((text) => {
+
+        if(text.includes(approvalUser1)) {
+            processBillPage.getFirstApprovalUser1().click({force:true});
+        } else {
+            processBillPage.getApprovalUserSearchFilter1().clear({force:true});
+            processBillPage.getApprovalUserDropdownList1()
+            .find('li')
+            .eq(0)
+            .click({force:true});
+        }
+    });
+}

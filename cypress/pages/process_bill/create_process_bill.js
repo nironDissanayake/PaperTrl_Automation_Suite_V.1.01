@@ -1,7 +1,7 @@
 class ProcessBill {
 
     getBillSubMenu() {
-        return cy.get('.ng-tns-c394-58.layout-root-menuitem > .p-ripple > .layout-menuitem-icon');
+        return cy.get('a[routerlinkactive="active-route"][href="#/home/bills"] i.fa.fa-file-text');
     }
 
     getBillModuleName() {
@@ -14,6 +14,14 @@ class ProcessBill {
 
     getPageBody() {
         return cy.get('body');
+    }
+
+    getAlertMessage207() {
+        return cy.get('div[role="alert"].p-toast-message-content', {timeout:10000});
+    }
+
+    getAlerttMessage200() {
+        return cy.get('div[role="alert"]', {timeout:10000});
     }
 
     getVendorRequiredMessage() {
@@ -160,7 +168,7 @@ class ProcessBill {
     }
 
     getCostItem1() {
-        return cy.get('#rate_1');
+        return cy.get('#rate_0');
     }
 
     getItemQty1() {
@@ -174,6 +182,47 @@ class ProcessBill {
     getItemAmount1() {
         return cy.get('#itemAmount_0');
     }
+
+    // Approval Group
+
+    getApproversSelector() {
+        return cy.get('#p-tabpanel-14-label > .custom-span');
+    }
+
+    getApprovalGroupDropdownTrigger1() {
+        return cy.get('#approvalGroup10 > .p-dropdown > .p-dropdown-trigger');
+    }
+    
+    getApprovalGroupDropdownList1() {
+        return cy.get('#pr_id_123_list');
+    }
+
+    getApprovalGroupSearchFilter1() {
+        return cy.get('.p-dropdown-filter');
+    }
+
+    getFirstApprovalGroup1() {
+        return cy.get('#pr_id_123_list > :nth-child(1) > .p-ripple > .ng-star-inserted');
+    }
+    
+    // Approval User 
+
+    getApprovalUserDropdownTrigger1() {
+        return cy.get('#approvalUser10 > .p-dropdown > .p-dropdown-trigger');
+    }
+
+    getApprovalUserDropdownList1() {
+        return cy.get('#pr_id_124_list');
+    }
+
+    getApprovalUserSearchFilter1() {
+        return cy.get('.p-dropdown-filter');
+    }
+
+    getFirstApprovalUser1() {
+        return cy.get('#pr_id_124_list > :nth-child(1) > .p-ripple > .ng-star-inserted');
+    }
+    
 
 }
 export default ProcessBill;
