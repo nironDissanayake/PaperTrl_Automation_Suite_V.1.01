@@ -1,0 +1,17 @@
+version: 2.1
+executors:
+  node-executor:
+    docker:
+      - image: cypress/base:14
+
+orbs:
+  cypress: cypress-io/cypress@1
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - cypress/install
+      - cypress/run:
+          yarn: true
+          start: npm start
