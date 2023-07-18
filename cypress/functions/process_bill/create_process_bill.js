@@ -9,6 +9,7 @@ export function clickBillSubMenu() {
 
 export function clickCreateProcessBillButton() {
     processBillPage.getCreateProcessBillButton().click();
+    cy.wait(5000);
 }
 
 export function vendorSelection(vendor) {
@@ -192,6 +193,7 @@ export function clickApproversSelector() {
 }
 
 export function approvalGroupSelection(approvalGroup1) {
+    clickApproversSelector();
     processBillPage.getApprovalGroupDropdownTrigger1().click();
     processBillPage.getApprovalGroupSearchFilter1().type(approvalGroup1, {force:true});
     processBillPage.getApprovalGroupDropdownList1()

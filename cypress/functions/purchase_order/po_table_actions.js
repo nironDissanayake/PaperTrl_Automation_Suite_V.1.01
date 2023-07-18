@@ -18,14 +18,13 @@ export function typePoNumber(poNumber) {
 
 export function getActionButton() {
     cy.wait(3000).then(() => {
-    poActionsPage.getActionButton().click({force:true}) });
+    poActionsPage.getActionButton().click({force:true})});
 }
   
 export function goToPoApprovalScreen() {
     getActionButton();
     poActionsPage.getApproveOrRejectAction().click({force:true});
     poActionsPage.getApprovalScreenLable().should('contain', 'Purchase Order Details');
-    poActionsPage.getApprovalPDFreport().should('be.visible');
     poActionsPage.getApprovalPDFreport().should('be.visible');
     poActionsPage.getAuditTrailButton().should('be.visible')
     poActionsPage.getApproveButton().should('be.visible');

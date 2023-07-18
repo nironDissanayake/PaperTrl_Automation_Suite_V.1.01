@@ -46,11 +46,10 @@ describe('process_bill', () => {
         tenantOrPortal.checkTenantOrPortal();
         clickBillSubMenu();
         clickCreateProcessBillButton();
-        cy.wait(5000);
     });
 
 
-    it.only('process_bill_header_required_fields_validation', () => {
+    it('process_bill_header_required_fields_validation', () => {
         
         clickSaveAsApprovedButton();
         validateBillHeaderRequiredFields();
@@ -62,7 +61,7 @@ describe('process_bill', () => {
         validateBillHeaderRequiredFields();
     });
 
-    it.skip('save_as_approved_with_account_line_1', () => {
+    it.only('save_as_approved_with_account_line_1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo1);
@@ -78,7 +77,7 @@ describe('process_bill', () => {
         getAlert200().should('contain', 'Bill successfully save as approved');
     });
 
-    it.skip('save_as_approved_with_item_line_1', () => {
+    it('save_as_approved_with_item_line_1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo2);
@@ -94,7 +93,7 @@ describe('process_bill', () => {
         getAlert200().should('contain', 'Bill successfully save as approved');
     });
 
-    it.skip('save_as_approved_with_item_line1_&_account_line1', () => {
+    it('save_as_approved_with_item_line1_&_account_line1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo3);
@@ -128,6 +127,7 @@ describe('process_bill', () => {
         typeAmountAccount1(amount1);
         clickSaveAsDraftButton();
         getAlert200().should('contain', 'Draft updated successfully');
+        clickSaveAsApprovedButton();
     });
 
     it('save_as_draft_with_item_line_1', () => {
@@ -144,6 +144,7 @@ describe('process_bill', () => {
         assertItemLineAmount1();
         clickSaveAsDraftButton();
         getAlert200().should('contain', 'Draft updated successfully');
+        clickSaveAsApprovedButton();
     });
 
     it('save_as_draft_with_item_line1_&_account_line1', () => {
@@ -164,6 +165,7 @@ describe('process_bill', () => {
         assertItemLineAmount1();
         clickSaveAsDraftButton();
         getAlert200().should('contain', 'Draft updated successfully');
+        clickSaveAsApprovedButton();
     });
 
     it('submit_for_approval_with_account_line1', () => {

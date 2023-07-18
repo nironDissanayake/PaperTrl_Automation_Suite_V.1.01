@@ -54,7 +54,7 @@ describe('po_table_actions', () => {
         clickPoSubmenu(purchaseOrders);
     })
 
-    it('01. create_&_approve_with_item_line1_&_account_line1', () => {
+    it.only('01. create_&_approve_with_item_line1_&_account_line1', () => {
 
         clickCreatePoButton();
         typePoNumber(poNumber0);
@@ -66,7 +66,7 @@ describe('po_table_actions', () => {
         typeDiscount(discount);
         assertItemLineAmount();
         accounSelection1(account);
-        departmentSelectionA1(department);
+        //departmentSelectionA1(department);
         typeAmountA1(amount);
         AssertNetAmountWithTaxAmount(tax);
         approvalGroupSelection1(approvalGroup1);

@@ -63,7 +63,7 @@ class ProcessBill {
     }
 
     getvendorDropdownList() {
-        return cy.get('#pr_id_83_list');
+        return cy.get('[role="listbox"]');
     }
 
     getVendorDropDownSearchFilter() {
@@ -95,7 +95,7 @@ class ProcessBill {
     }
 
     getTermDropdownList() {
-        return cy.get('#pr_id_88_list');
+        return cy.get('[role="listbox"]');
     }
 
     getTermDropdownFilter() {
@@ -121,7 +121,7 @@ class ProcessBill {
     }
 
     getAccountDropdownList1() {
-        return cy.get('#pr_id_95_list');
+        return cy.get('[role="listbox"]');
     }
 
     getFirstAccount1() {
@@ -156,7 +156,7 @@ class ProcessBill {
     }
 
     getDropdownListItem1() {
-        return cy.get('#pr_id_124_list');
+        return cy.get('[role="listbox"]');
     }
 
     getFirstItem1() {
@@ -194,7 +194,7 @@ class ProcessBill {
     }
     
     getApprovalGroupDropdownList1() {
-        return cy.get('#pr_id_123_list');
+        return cy.get('[role="listbox"]');
     }
 
     getApprovalGroupSearchFilter1() {
@@ -212,7 +212,7 @@ class ProcessBill {
     }
 
     getApprovalUserDropdownList1() {
-        return cy.get('#pr_id_124_list');
+        return cy.get('[role="listbox"]');
     }
 
     getApprovalUserSearchFilter1() {

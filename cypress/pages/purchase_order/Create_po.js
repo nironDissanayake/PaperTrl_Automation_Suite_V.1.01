@@ -178,9 +178,8 @@ class PurchaseOrders {
     }
 
     getDepartmentDropdownA1 () {
-        return cy.get(':nth-child(1) > :nth-child(4) > .p-float-label > #departmentIdAccount > .p-dropdown > .p-dropdown-trigger');
+        return cy.xpath("//tbody/tr[1]/td[4]/span[1]/p-dropdown[1]/div[1]/div[2]");
     }
-
     getDepartmentSearchFilterA1() {
         return cy.get('.p-dropdown-filter');
     }
