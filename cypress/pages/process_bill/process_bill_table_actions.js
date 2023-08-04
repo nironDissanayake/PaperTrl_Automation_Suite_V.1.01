@@ -12,7 +12,11 @@ class ProcessBillActions {
 
     getApproveOrRejectAction() {
         return cy.get('.p-menuitem-text').contains('Approve or Reject');
-     }
+    }
+
+    getEditAction() {
+        return cy.get('.p-menuitem-text').contains('edit');
+    }
 
     getApprovePageHeader() {
         return cy.get('.module-header-label');

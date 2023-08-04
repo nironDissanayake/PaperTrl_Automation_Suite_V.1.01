@@ -37,7 +37,7 @@ describe('purchase_order', () => {
         clickCreatePoButton();
     })
 
-    it.only('PO_header_required_fields_validation', () => {
+    it('01. PO_header_required_fields_validation', () => {
 
         clickSaveAsApprovedButton();
         validateHeaderRequiredFields();
@@ -49,7 +49,7 @@ describe('purchase_order', () => {
         validateHeaderRequiredFields();
     })
 
-    it('save_as_approved_with_item_line_1', () => {
+    it('02. save_as_approved_with_item_line_1', () => {
         
         departmentSelection(department);
         vendorSelection(vendor);
@@ -63,7 +63,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Purchase Order successfully save as approved');
     })
 
-    it('save_as_approved_with_account_line_1', () => {
+    it('03. save_as_approved_with_account_line_1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);
@@ -74,7 +74,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Purchase Order successfully save as approved');
     })
 
-    it('save_as_approved_with_item_line1_&_account_line1', () => {
+    it('04. save_as_approved_with_item_line1_&_account_line1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);
@@ -92,7 +92,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Purchase Order successfully save as approved');
     })    
 
-    it('save_as_draft_with_item_line_1', () => {
+    it('05. save_as_draft_with_item_line_1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);
@@ -106,7 +106,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Draft saved successfully');
     })
 
-    it('save_as_draft_with_account_line1', () => {
+    it('06. save_as_draft_with_account_line1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);
@@ -117,7 +117,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Draft saved successfully');
     })
 
-    it('save_as_draft_with_item_line1_&_account_line1', () => {
+    it('07. save_as_draft_with_item_line1_&_account_line1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);
@@ -134,7 +134,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Draft saved successfully');
     })
 
-    it('submit_for_approval_with_item_line1', () => {
+    it('08. submit_for_approval_with_item_line1', () => {
         
         departmentSelection(department);
         vendorSelection(vendor);
@@ -150,7 +150,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Purchase Order successfully submitted for approval');
     })
 
-    it('submit_for_approval_with_account_line1', ()=> {
+    it('09. submit_for_approval_with_account_line1', ()=> {
         
         departmentSelection(department);
         vendorSelection(vendor);
@@ -163,7 +163,7 @@ describe('purchase_order', () => {
         getAlert200().should('contain', 'Purchase Order successfully submitted for approval');
     })
 
-    it('submit_for_approva_with_item_line1_&_account_line1', () => {
+    it('10. submit_for_approva_with_item_line1_&_account_line1', () => {
 
         departmentSelection(department);
         vendorSelection(vendor);

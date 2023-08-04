@@ -86,7 +86,7 @@ import PurchaseOrders from "../../pages/purchase_order/Create_po";
                 .find('li')
                 .eq(1)
                 .click({force:true});
-            }   purchaseOrdersPage.getPageBody().click();
+            }   purchaseOrdersPage.getPageBody().click(0, 0);;
         })
     }
 
@@ -143,12 +143,12 @@ import PurchaseOrders from "../../pages/purchase_order/Create_po";
                 .find('li')
                 .eq(1)
                 .click({force:true})
-            }   purchaseOrdersPage.getPageBody().click();
+            }
         })
     }
 
     export function departmentSelectionA1(department) {
-        purchaseOrdersPage.getDepartmentDropdownA1().click({force:true});
+        purchaseOrdersPage.getDepartmentDropdownA1().click();
         purchaseOrdersPage.getDepartmentSearchFilterA1().type(department, {force:true});
         purchaseOrdersPage.getDepartmentDropDownListA1()
         .invoke('text')

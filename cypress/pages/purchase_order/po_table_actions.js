@@ -15,14 +15,9 @@ class PurchaseOrderActions {
        return cy.get(':nth-child(3) > span > [style="max-width: 135px;"] > .p-fluid > .p-inputtext')
     }
 
-    // getActionButton1() {
-    //    return cy.xpath("//span[@class='p-button-icon pi pi-ellipsis-v']");
-    // }
-
     getActionButton() {
        return cy.get('button.p-element.grid-action-btn')
        .eq(0);
-       //cy.xpath("//tbody/tr[1]/td[16]/span[2]/button[1]/span[1]", {timeout:10000}); 
     }
 
     // PO Approval
@@ -96,7 +91,7 @@ class PurchaseOrderActions {
 
     getPoEditScreenVendorDropdownList() {
         //return cy.get('ul.p-dropdown-items', {timeout:5000});
-        return cy.get('#pr_id_75_list', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getPoEditSubmitButoon() {
@@ -104,11 +99,11 @@ class PurchaseOrderActions {
     }
 
     getPoEditScreenItemDropDownList1() {
-        return cy.get('#pr_id_144_list', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
       
     getPoEditScreenAccountDropdownList1() {
-        return cy.get('#pr_id_140_list', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getPoEditScreenItemGrossAmount() {
@@ -150,7 +145,7 @@ class PurchaseOrderActions {
     }
 
     getPoEditApprovalGroupList() {
-        return cy.get('ul.p-dropdown-items li[role="option"]', {timeout:5000})
+        return cy.get('[role="listbox"]');
         //cy.xpath("//ul[@id='pr_id_233_list']", {timeout:10000});
     }
 

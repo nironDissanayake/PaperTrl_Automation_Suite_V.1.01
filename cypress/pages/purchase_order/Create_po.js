@@ -27,7 +27,7 @@ class PurchaseOrders {
     }
 
     getDepartmentDropDownList() {
-      return cy.get('ul.p-dropdown-items li[role="option"]', {timeout:5000});
+      return cy.get('[role="listbox"]');
       //cy.get('#pr_id_54_list', {timeout:5000});
     }
 
@@ -51,7 +51,7 @@ class PurchaseOrders {
     }
 
     getVendorDropdownList() {
-        return cy.get('ul.p-dropdown-items li[role="option"]', {timeout:5000});
+        return cy.get('[role="listbox"]');
         //cy.get('#pr_id_55_list', {timeout:5000});
       }
 
@@ -100,7 +100,7 @@ class PurchaseOrders {
     }
 
     getItemDropDownListI1() {
-        return cy.get('ul[role="listbox"]', {timeout:5000});
+        return cy.get('[role="listbox"]');
         // cy.get('#pr_id_137_list', {timeout:5000});
     }
 
@@ -115,7 +115,7 @@ class PurchaseOrders {
     }
 
     getDepartmentDropDownListI1() {
-        return cy.get('#pr_id_139_list', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getFirstSearchedDepartmentI1() {
@@ -169,7 +169,7 @@ class PurchaseOrders {
     }
 
     getAccountDropdownListA1() {
-        return cy.get('ul.p-dropdown-items', {timeout:5000});
+        return cy.get('[role="listbox"]');
         //cy.get('#pr_id_95_list', {timeout:5000});
     }
 
@@ -178,14 +178,14 @@ class PurchaseOrders {
     }
 
     getDepartmentDropdownA1 () {
-        return cy.xpath("//tbody/tr[1]/td[4]/span[1]/p-dropdown[1]/div[1]/div[2]");
+        return cy.get(':nth-child(1) > :nth-child(4) > .p-float-label > #departmentIdAccount > .p-dropdown > .p-dropdown-trigger');
     }
     getDepartmentSearchFilterA1() {
         return cy.get('.p-dropdown-filter');
     }
 
     getDepartmentDropDownListA1() {
-        return cy.get('#pr_id_96_list', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getFirstSearchedDepartmentA1() {
@@ -275,7 +275,7 @@ class PurchaseOrders {
     }
 
     getApprovalGroupDropdownList1() {
-        return cy.get('ul.p-dropdown-items', {timeout:5000});
+        return cy.get('[role="listbox"]');
         //cy.get('#pr_id_135_list', {timeout:5000});
     }
 
@@ -294,7 +294,7 @@ class PurchaseOrders {
     }
 
     getApprovalUserDropdownList1() {
-        return cy.get('ul.p-dropdown-items', {timeout:5000});
+        return cy.get('[role="listbox"]');
         //cy.get('#pr_id_136_list', {timeout:5000});
     }
 
@@ -313,7 +313,7 @@ class PurchaseOrders {
     }
 
     getApprovalGroupDropdownList2() {
-        return cy.get('ul.p-dropdown-items', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getFirstApprovalGroup2() {
@@ -333,7 +333,7 @@ class PurchaseOrders {
     }
 
     getApprovalUserDropdownList2() {
-        return cy.get('ul.p-dropdown-items', {timeout:5000});
+        return cy.get('[role="listbox"]');
     }
 
     getFirstApprovalUser2() {
