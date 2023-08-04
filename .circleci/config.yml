@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: cypress/base:14
+    parallelism: 2
     steps:
       - checkout
       - run:
@@ -21,6 +22,4 @@ workflows:
     jobs:
       - build
 
-      - build:
-          parallelism: 2
 
