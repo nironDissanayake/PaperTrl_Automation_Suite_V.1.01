@@ -19,5 +19,8 @@ workflows:
   version: 2
   build-and-test:
     jobs:
+      - build
+
       - build:
           parallelism: 2
+
