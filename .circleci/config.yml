@@ -22,4 +22,4 @@ workflows:
   build-and-test:
     jobs:
       - build:
-          parallelism: 3
+          parallelism: 2
