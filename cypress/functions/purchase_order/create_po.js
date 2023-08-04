@@ -39,7 +39,6 @@ import PurchaseOrders from "../../pages/purchase_order/Create_po";
             }   purchaseOrdersPage.getPageBody().click();
         });
     }
-    //
 
     export function submitDateSelection() {
         purchaseOrdersPage.submitDateDropdown().click();
