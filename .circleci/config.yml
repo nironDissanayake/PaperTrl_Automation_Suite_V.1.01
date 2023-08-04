@@ -9,13 +9,11 @@ jobs:
           name: Install Dependencies
           command: npm install
       - run:
-          name: Run Cypress Tests
-          command: |
-            npx cypress run --spec "cypress/e2e/purchase_order/create_po.cy.js"
+          name: Run Cypress Tests (create_po)
+          command: npx cypress run --spec "cypress/e2e/purchase_order/create_po.cy.js"
       - run:
-          name: Run Cypress Tests
-          command: |
-            npx cypress run --spec "cypress/e2e/purchase_order/po_table_actions.cy.js"
+          name: Run Cypress Tests (po_table_actions)
+          command: npx cypress run --spec "cypress/e2e/purchase_order/po_table_actions.cy.js"
 
 workflows:
   version: 2
