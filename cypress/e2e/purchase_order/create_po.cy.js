@@ -49,7 +49,7 @@ describe('purchase_order', () => {
         validateHeaderRequiredFields();
     })
 
-    it.only('02. save_as_approved_with_item_line_1', () => {
+    it('02. save_as_approved_with_item_line_1', () => {
         
         departmentSelection(department);
         vendorSelection(vendor);
