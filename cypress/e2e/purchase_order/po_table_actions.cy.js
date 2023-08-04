@@ -231,7 +231,7 @@ describe('po_table_actions', () => {
         getAlert200().should('contain', 'Purchase Order updated successfully');
     });
 
-    it.only('09. create_draft_&_save_as_approved_with_item_line1', () => {
+    it('09. create_draft_&_save_as_approved_with_item_line1', () => {
 
         clickCreatePoButton();
         typePoNumber(poNumber4);
@@ -253,7 +253,7 @@ describe('po_table_actions', () => {
         clickDeleteAction();
     });
 
-    it.only('10. create_draft_&_submit_for_approval_with_account_line1', () => {
+    it('10. create_draft_&_submit_for_approval_with_account_line1', () => {
 
         clickCreatePoButton();
         typePoNumber(poNumber5);
