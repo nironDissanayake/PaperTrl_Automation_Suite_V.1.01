@@ -186,7 +186,7 @@ describe('process_bill', () => {
         getAlert200().should('contain', 'Successfully submitted for approval');
     });
 
-    it.only('submit_for_approval_with_item_line1', () => {
+    it('submit_for_approval_with_item_line1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo8);
@@ -204,7 +204,7 @@ describe('process_bill', () => {
         getAlert200().should('contain', 'Successfully submitted for approval');
     });
 
-    it.only('submit_for_approva_with_item_line1_&_account_line1', () => {
+    it('submit_for_approva_with_item_line1_&_account_line1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo9);
