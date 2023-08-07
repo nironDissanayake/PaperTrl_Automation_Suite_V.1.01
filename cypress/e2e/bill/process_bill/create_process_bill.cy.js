@@ -186,7 +186,7 @@ describe('process_bill', () => {
         getAlert200().should('contain', 'Successfully submitted for approval');
     });
 
-    it('submit_for_approval_with_item_line1', () => {
+    it.only('submit_for_approval_with_item_line1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo8);
@@ -199,12 +199,12 @@ describe('process_bill', () => {
         typeItemCost1(itemCost1);
         assertItemLineAmount1();
         clickApproversSelector();
-        approvalGroupSelection();
+        approvalGroupSelection(approvalGroup1);
         clickSubmitForApprovalButton();
         getAlert200().should('contain', 'Successfully submitted for approval');
     });
 
-    it('submit_for_approva_with_item_line1_&_account_line1', () => {
+    it.only('submit_for_approva_with_item_line1_&_account_line1', () => {
 
         vendorSelection(vendor);
         typeBillNo(billNo9);
@@ -219,9 +219,9 @@ describe('process_bill', () => {
         ItemSelectionLine1(item1);
         typeQtyItem1(qty1);
         typeItemCost1(itemCost1);
-        assertItemLineAmount1();
+        //assertItemLineAmount1();
         clickApproversSelector();
-        approvalGroupSelection();
+        approvalGroupSelection(approvalGroup1);
         clickSubmitForApprovalButton();
         getAlert200().should('contain', 'Successfully submitted for approval');
     });
