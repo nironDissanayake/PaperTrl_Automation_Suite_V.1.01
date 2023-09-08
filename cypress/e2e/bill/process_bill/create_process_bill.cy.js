@@ -46,6 +46,7 @@ describe('process_bill', () => {
         tenantOrPortal.checkTenantOrPortal();
         clickBillSubMenu();
         clickCreateProcessBillButton();
+        cy.wait(10000);
     });
 
 

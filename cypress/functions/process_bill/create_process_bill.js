@@ -9,7 +9,6 @@ export function clickBillSubMenu() {
 
 export function clickCreateProcessBillButton() {
     processBillPage.getCreateProcessBillButton().click();
-    cy.wait(5000);
 }
 
 export function vendorSelection(vendor) {
